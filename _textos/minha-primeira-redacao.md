@@ -1,6 +1,5 @@
 ---
 title: Minha primeira redação do livro digital
-published: true
 ---
 
 Quasi amet voluptas ut sapiente earum voluptatem, nobis, error iste perspiciatis sequi animi vitae cupiditate molestiae magni necessitatibus id velit neque laborum.
