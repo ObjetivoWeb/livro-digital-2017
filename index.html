@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,5 +49,14 @@ E seguir viagem
 <p><em>Hardy Guedes</em></p>
         </div>
     </div>
+
+    <ul>
+        {% for texto in site.textos %}{% if texto.published %}
+        <li>
+            <a href="{{ site.baseurl }}{{ texto.url }}">{{ texto.title }}</a>
+        </li>
+        {% endif %}{% endfor %}
+    </ul>
+
 </body>
 </html>
