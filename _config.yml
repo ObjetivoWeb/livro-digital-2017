@@ -1,0 +1,34 @@
+title: Livro Digital 2017
+tagline: Aos que virão...
+description: >
+  Coloque descrição aqui
+baseurl: "/livro-digital-2017" # the subpath of your site, e.g. /blog
+url: "http://objetivoweb.com.br"
+
+# Build settings
+markdown: kramdown
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-coffeescript
+
+collections:
+  textos:
+    output: true
+    permalink: /:path/
+  unidades:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: textos
+    values:
+      layout: texto
+  - scope:
+      path: ""
+      type: unidades
+    values:
+      layout: unidade
