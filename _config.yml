@@ -24,6 +24,9 @@ defaults:
     path: ''
     type: textos
   values:
+    autor:
+    turma:
+    image:
     layout: texto
 - scope:
     path: _textos/conselheiro
