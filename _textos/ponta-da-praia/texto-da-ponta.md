@@ -1,5 +1,5 @@
 ---
-title: Segunda redação de exemplo
+title: Ponta da Praia - redação de exemplo
 published: true
 ---
 

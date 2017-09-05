@@ -1,5 +1,5 @@
 ---
-title: Texto novo
+title: Embaré - Texto novo
 published: true
 turma: 9A
 ---
