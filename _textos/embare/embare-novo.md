@@ -1,6 +1,5 @@
 ---
 title: Embaré - Texto novo
-published: false
 autor: José Xavier
 turma: 9º S
 image: "/uploads/Koala.jpg"
