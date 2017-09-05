@@ -76,6 +76,18 @@ prose:
   - "/_includes"
   metadata:
     _textos:
+    - name: title
+      field:
+        element: text
+        label: Título
+        placeholder: Digite o título...
+    _textos:
+    - name: autor
+      field:
+        element: text
+        label: Autor
+        placeholder: Nome do aluno...
+    _textos:
     - name: turma
       field:
         element: text
