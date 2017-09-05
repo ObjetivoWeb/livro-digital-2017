@@ -1,0 +1,74 @@
+---
+layout: default
+---
+
+{% assign crumbs = page.url | split: '/' %}
+
+{% for u in site.unidades %}
+  {% if u.name == crumbs[1] %}
+    {% assign unidade = u.title %}
+    {% for t in u.turmas %}
+      {% if t.id == crumbs[2] %}
+        {% assign turma = t.nome %}
+        {% assign flickr = t.flickr_id %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+
+<article class="post">
+
+  <header class="post-header">
+
+    <h1 class="post-title">{% if page.titulo %}{{ page.titulo }}{% else if page.title %}{{ page.title }}{% endif %}</h1>
+    <div data-grid="">
+      <aside class="post-meta" data-cell>
+        <p><strong>{{ page.nome }}</strong> <br>{{ unidade }} - {{ turma }}</p>
+      </aside>
+      <div class="share-container" data-cell="shrink">
+        <p class="share-label">Compartilhe este texto:</p>
+        {% include share/widget.html position = 'header' %}
+      </div>
+    </div>
+    <div class="data-img" data-flickr-id="{{ flickr }}" data-pic-title="{{ crumbs[3] }}" title="Ilustração para {{ page.title }}, de {{ page.nome }}"></div>
+
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  <nav class="post-navigation" data-grid="row spacing justify">
+    <div data-cell="1of2" class="prev">
+    {% if page.previous.url %}
+      <a href="{{ page.previous.url | prepend: site.baseurl }}">&laquo; {% if page.previous.titulo %}{{ page.previous.titulo }}{% else %}{{page.previous.title}}{% endif %}</a>
+    {% endif %}
+    </div>
+    <div data-cell="1of2" class="next">
+    {% if page.next.url %}
+      <a href="{{ page.next.url | prepend: site.baseurl }}">{% if page.next.titulo %}{{ page.next.titulo }}{% else %}{{page.next.title}}{% endif %} &raquo;</a>
+    {% endif %}
+    </div>
+  </nav>
+
+  <div class="share-container" data-grid>
+    <p class="share-label" data-cell="1of2">Gostou? Comente e compartilhe:</p>
+    {% include share/widget.html position = 'header' %}
+  </div>
+
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+    this.page.url = '{{ page.url | prepend: site.baseurl | prepend: site.url }}';
+    this.page.identifier = '{% if page.titulo %}{{ page.titulo }}{% else if page.title %}{{ page.title }}{% endif %}';
+  };
+  (function() { /* DON'T EDIT BELOW THIS LINE */
+  var d = document, s = d.createElement('script');
+  s.src = '//objetivoweb.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Por favor, habilite a execução de javascript para visualizar <a href="https://disqus.com/?ref_noscript">comentários do Disqus</a>.</noscript>
+
+</article>

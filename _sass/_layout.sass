@@ -1,0 +1,244 @@
+/**
+ * Site header
+.site-header
+    min-height: $spacing-unit * 2
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    a
+        color: inherit
+        text-decoration: none
+
+.site-title
+    margin-bottom: 0
+    float: left
+    line-height: $spacing-unit * 2
+    letter-spacing: 1px
+    font-weight: 500
+
+.site-nav
+    float: right
+    line-height: $spacing-unit * 2
+    .menu-icon
+        display: none
+    .page-link
+        line-height: $base-line-height
+        font-weight: 500
+        // Gaps between nav items, but not on the last one
+        &:not(:last-child)
+            margin-right: 20px
+    +media-query($on-palm)
+        position: absolute
+        top: 9px
+        right: $spacing-unit / 2
+        background-color: $background-color
+        border: 1px solid $grey-color-light
+        border-radius: 5px
+        text-align: right
+        .menu-icon
+            display: block
+            float: right
+            width: 36px
+            height: 26px
+            line-height: 0
+            padding-top: 10px
+            text-align: center
+            > svg
+                width: 18px
+                height: 15px
+                path
+                    fill: $grey-color-dark
+        .trigger
+            clear: both
+            display: none
+        &:hover .trigger
+            display: block
+            padding-bottom: 5px
+        .page-link
+            display: block
+            padding: 5px 10px
+            color: $brand-color
+            &:not(:last-child)
+                margin-right: 0
+            margin-left: 20px
+
+.site-hero
+    text-align: center
+    padding: $spacing-unit * 2
+
+.site-tagline
+    color: $grey-color
+    font-weight: bold
+
+.menu-unidades
+    background-color: $grey-color-light
+    font-size: $base-font-size * .85
+    font-weight: 500
+    .wrapper
+        padding: 0 $spacing-unit / 2
+        white-space: nowrap
+        overflow: auto
+    a
+        display: inline-block
+        padding: $spacing-unit / 2
+        transition: background-color .3s ease-in-out
+        &:hover, &:focus
+            text-decoration: none
+            background-color: rgba($grey-color, .2)
+        &.selected
+            background-color: $grey-color
+            color: #fff
+
+/**
+ * Site footer
+.site-footer
+    border-top: 1px solid $grey-color-light
+    padding: $spacing-unit 0
+
+    p
+        color: $grey-color
+
+.footer-heading
+    font-size: 18px
+    margin-bottom: $spacing-unit / 2
+
+/**
+ * Page content
+.page-content
+    padding: $spacing-unit 0
+    letter-spacing: 1px
+
+    >
+        h1, h2, h3, h4, h5, h6,
+        p, blockquote, pre, hr,
+        dl, dd, ol, ul, figure,
+        table
+            @extend .wrapper
+
+.page-heading
+    font-size: 20px
+
+.post-list
+    margin-left: 0
+    list-style: none
+    position: relative
+
+.post-section
+    padding-top: $spacing-unit
+
+.post-link
+    display: block
+    line-height: 1
+
+.post-meta
+    font-size: $small-font-size
+    color: $grey-color
+
+.post-autor
+    // 
+
+.post-turma
+    // 
+
+.post-excerpt
+    // 
+
+/**
+ * Posts
+.post-header
+    margin-bottom: $spacing-unit
+
+.post-title
+    font-size: 42px
+    letter-spacing: -1px
+    line-height: 1
+    +media-query($on-laptop)
+        font-size: 36px
+
+.post-content
+    margin-bottom: $spacing-unit
+    h2
+        font-size: 32px
+        +media-query($on-laptop)
+            font-size: 28px
+    h3
+        font-size: 26px
+        +media-query($on-laptop)
+            font-size: 22px
+    h4
+        font-size: 20px
+        +media-query($on-laptop)
+            font-size: 18px
+
+.post-navigation
+    margin: $spacing-unit * 2 0
+    > *
+        width: 45%
+    a
+        display: block
+        padding: 5px
+        background-color: $grey-color-light
+        +media-query($on-palm)
+            font-size: smaller
+            letter-spacing: 0
+    .prev
+        float: left
+        text-align: left
+        a
+            +media-greater($on-laptop)
+                margin-left: -#{$spacing-unit}
+                padding-left: $spacing-unit
+                border-radius: 100px 0 0 100px
+        +media-query($on-palm)
+            margin-right: $spacing-unit / 2
+    .next
+        float: right
+        text-align: right
+        a
+            +media-greater($on-laptop)
+                margin-right: -#{$spacing-unit}
+                padding-right: $spacing-unit
+                border-radius: 0 100px 100px 0
+    &:after
+        content: ''
+        display: table
+        clear: both
+
+=wbtn-color($color)
+    color: rgba($color, .6)
+    &:hover, &:focus
+        color: $color
+        box-shadow: 0 1px 3px 0 $color
+
+.share-widget
+    margin-bottom: $spacing-unit
+
+    .share-item
+        margin-right: $spacing-unit / 2
+
+        .wbtn
+            display: inline-block
+            line-height: 0
+            padding: 10px
+            border-radius: 500px
+            color: $grey-color
+            background-color: $grey-color-light
+            box-shadow: 0 1px 1px 0 $grey-color
+            transition: .3s ease-in-out
+            svg
+                width: 25px
+                height: 25px
+                color: inherit
+                *
+                    fill: currentcolor
+            &.btn-fb
+                +wbtn-color(#3b5998)
+            &.btn-tw
+                +wbtn-color(#1da1f2)
+            &.btn-li
+                +wbtn-color(#0077b5)
+            &.btn-gp
+                +wbtn-color(#dd4b39)
+            &.btn-wa
+                +wbtn-color(#128c7e)

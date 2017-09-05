@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<header class="post-header" data-grid="row nowrap">
+  <h1 class="post-title">{{ page.title }}</h1>
+</header>
+
+<div class="post-content">
+  {{ content }}
+</div>
+
+{% assign crumbs = page.url | split: '/' %}
+{% assign unidades = site.textos | group_by: 'unidade' %}
+{% for unidade in unidades %}
+  {% if unidade.name == crumbs[1] %}
+    {% assign turmas = unidade.items | group_by: 'turma' %}
+  {% endif %}
+{% endfor %}
+
+<section class="post-section">
+{% for turma in turmas %}
+
+  <div data-grid="spacing cols-2" data-turma="{{ turma.name }}">
+  {% for post in turma.items %}
+
+    <article class="post-item">
+
+      <p class="post-link"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></p>
+      <p class="post-meta"><span class="post-autor">{{ post.autor }}</span> <span class="post-turma">{{ post.turma }}</span></p>
+      <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 16 }}</p>
+
+    </article>
+
+  {% endfor %}
+  </div>
+
+{% endfor %}
+</section>

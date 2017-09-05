@@ -12,6 +12,7 @@ collections:
   unidades:
     title: Unidades
     output: true
+    permalink: "/:path/"
   uploads:
     title: Uploads
     output: true
@@ -22,14 +23,40 @@ defaults:
   values:
     layout: texto
 - scope:
+    path: '_textos/conselheiro'
+  values:
+    unidade: conselheiro
+- scope:
+    path: '_textos/embare'
+  values:
+    unidade: embare
+- scope:
+    path: '_textos/guaruja'
+  values:
+    unidade: guaruja
+- scope:
+    path: '_textos/ponta-da-praia'
+  values:
+    unidade: ponta-da-praia
+- scope:
+    path: '_textos/praia-grande'
+  values:
+    unidade: praia-grande
+- scope:
+    path: '_textos/sao-jose'
+  values:
+    unidade: sao-jose
+- scope:
+    path: '_textos/sao-vicente'
+  values:
+    unidade: sao-vicente
+- scope:
     path: ''
     type: unidades
   values:
     layout: unidade
 tagline: Aos que virão...
-description: 'Coloque descrição aqui
-
-'
+description: 'Coloque descrição aqui'
 baseurl: "/livro-digital-2017"
 url: http://objetivoweb.com.br
 markdown: kramdown

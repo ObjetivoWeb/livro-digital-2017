@@ -1,19 +1,10 @@
 ---
+layout: default
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Aos que virão... Livro Digital 2017</title>
-</head>
-<body>
-    <div class="page-content">
-        <div class="wrapper">
-            <h2>Aos que virão...</h2>
-            <pre>
+<section class="page-content">
+    <h2>Aos que virão...</h2>
+    <pre>
 Desarrumar as pedras do chão
 Pra marcar minha passagem
 
@@ -46,18 +37,18 @@ Recompor a paisagem
 Deixando aos que virão
 Um mundo sereno
 E seguir viagem
-            </pre>
-<p><em>Hardy Guedes</em></p>
-        </div>
-    </div>
+    </pre>
+    <p><em>Hardy Guedes</em></p>
+</section>
 
+<section class="page-content">
     <ul>
-        {% for texto in site.textos %}{% if texto.published %}
-        <li>
-            <a href="{{ site.baseurl }}{{ texto.url }}">{{ texto.title }}</a>
-        </li>
-        {% endif %}{% endfor %}
+        {% for texto in site.textos %}
+            {% if texto.published != false %}
+                <li>
+                    <a href="{{ site.baseurl }}{{ texto.url }}">{{ texto.title }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
     </ul>
-
-</body>
-</html>
+</section>
