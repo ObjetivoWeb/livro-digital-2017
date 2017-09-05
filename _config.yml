@@ -64,3 +64,21 @@ sass:
   style: compressed
 plugins:
 - jekyll-coffeescript
+
+prose:
+  rooturl: '_textos'
+  siteurl: 'https://objetivoweb.github.io/livro-digital-2017/'
+  relativeLinks: 'https://objetivoweb.github.io/livro-digital-2017/links.jsonp'
+  media: '_uploads'
+  ignore:
+    - index.md
+    - _config.yml
+    - /_layouts
+    - /_includes
+  metadata:
+    _textos:
+      - name: "turma"
+        field:
+          element: "text"
+          label: "Turma"
+          placeholder: "Apenas número e letra..."
