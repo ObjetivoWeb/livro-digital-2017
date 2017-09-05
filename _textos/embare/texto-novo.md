@@ -1,6 +1,6 @@
 ---
 title: Texto novo
-published: false
+published: true
 turma: 9A
 ---
 
