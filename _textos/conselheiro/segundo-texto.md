@@ -1,4 +1,5 @@
 ---
-title: segunda
+title: Segunda redação de exemplo
+published: false
 ---
 
