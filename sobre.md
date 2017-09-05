@@ -1,6 +1,6 @@
 ---
-layout: page
 title: Sobre o projeto
+layout: page
 menu-title: Sobre
 ---
 
