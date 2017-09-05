@@ -9,6 +9,9 @@ collections:
     title: Textos
     output: true
     permalink: "/:path/"
+  turmas:
+    title: Turmas
+    output: true
   unidades:
     title: Unidades
     output: true
