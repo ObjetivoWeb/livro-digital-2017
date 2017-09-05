@@ -10,10 +10,9 @@ layout: default
   {{ content }}
 </div>
 
-{% assign crumbs = page.url | split: '/' %}
 {% assign unidades = site.textos | group_by: 'unidade' %}
 {% for unidade in unidades %}
-  {% if unidade.name == crumbs[1] %}
+  {% if unidade.name == page.title %}
     {% assign turmas = unidade.items | group_by: 'turma' %}
   {% endif %}
 {% endfor %}

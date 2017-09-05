@@ -22,34 +22,9 @@ defaults:
     type: textos
   values:
     layout: texto
-- scope:
-    path: _textos/conselheiro
-  values:
-    unidade: conselheiro
-- scope:
-    path: _textos/embare
-  values:
-    unidade: embare
-- scope:
-    path: _textos/guaruja
-  values:
-    unidade: guaruja
-- scope:
-    path: _textos/ponta-da-praia
-  values:
-    unidade: ponta-da-praia
-- scope:
-    path: _textos/praia-grande
-  values:
-    unidade: praia-grande
-- scope:
-    path: _textos/sao-jose
-  values:
-    unidade: sao-jose
-- scope:
-    path: _textos/sao-vicente
-  values:
-    unidade: sao-vicente
+    unidade: ''
+    turma: ''
+    autor: ''
 - scope:
     path: ''
     type: unidades
@@ -64,25 +39,3 @@ sass:
   style: compressed
 plugins:
 - jekyll-coffeescript
-prose:
-  rooturl: _textos
-  siteurl: https://objetivoweb.github.io/livro-digital-2017/
-  relativeLinks: https://objetivoweb.github.io/livro-digital-2017/links.jsonp
-  media: _uploads
-  ignore:
-  - index.md
-  - _config.yml
-  - "/_layouts"
-  - "/_includes"
-  metadata:
-    _textos:
-    - name: turma
-      field:
-        element: text
-        label: Turma
-        placeholder: Apenas número e letra...
-    - name: autor
-      field:
-        element: text
-        label: Autor
-        placeholder: Nome do aluno...
