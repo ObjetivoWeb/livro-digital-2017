@@ -11,6 +11,7 @@
         text-decoration: none
 
 .site-title
+    margin-left: $spacing-unit / 2
     margin-bottom: 0
     float: left
     line-height: $spacing-unit * 2
@@ -18,77 +19,60 @@
     font-weight: 500
 
 .site-nav
-    float: right
-    line-height: $spacing-unit * 2
-    .menu-icon
-        display: none
+    position: absolute
+    top: 9px
+    right: $spacing-unit / 2
+    border-radius: 7px
+    text-align: right
+    background-color: $background-color
+    transition: .1s ease-in-out
     .page-link
-        line-height: $base-line-height
+        display: block
+        padding: 15px
+        color: $brand-color
         font-weight: 500
-        // Gaps between nav items, but not on the last one
-        &:not(:last-child)
-            margin-right: 20px
-    +media-query($on-palm)
-        position: absolute
-        top: 9px
-        right: $spacing-unit / 2
-        background-color: $background-color
-        border: 1px solid $grey-color-light
-        border-radius: 5px
-        text-align: right
-        .menu-icon
-            display: block
-            float: right
-            width: 36px
-            height: 26px
-            line-height: 0
-            padding-top: 10px
-            text-align: center
-            > svg
-                width: 18px
-                height: 15px
-                path
-                    fill: $grey-color-dark
-        .trigger
-            clear: both
-            display: none
-        &:hover .trigger
-            display: block
-            padding-bottom: 5px
-        .page-link
-            display: block
-            padding: 5px 10px
-            color: $brand-color
-            &:not(:last-child)
-                margin-right: 0
-            margin-left: 20px
-
-.site-hero
-    text-align: center
-    padding: $spacing-unit * 2
-
-.site-tagline
-    color: $grey-color
-    font-weight: bold
-
-.menu-unidades
-    background-color: $grey-color-light
-    font-size: $base-font-size * .85
-    font-weight: 500
-    .wrapper
-        padding: 0 $spacing-unit / 2
-        white-space: nowrap
-        overflow: auto
-    a
-        display: inline-block
-        padding: $spacing-unit / 2
-        transition: background-color .3s ease-in-out
-        &:hover, &:focus
-            text-decoration: none
-            background-color: rgba($grey-color, .2)
-        &.selected
-            background-color: $grey-color
+        &:hover, &:focus, &:active
+            background-color: $brand-color
             color: #fff
+
+    .menu-icon
+        display: block
+        float: right
+        width: 50px
+        height: 50px
+        line-height: 0
+        padding-top: 10px
+        text-align: center
+        > svg
+            width: 30px
+            height: 30px
+            color: inherit
+            path
+                fill: currentcolor
+    .trigger
+        display: none
+        padding-bottom: 5px
+        transition: .5s ease-in-out
+    &:hover, &:focus, &:active
+        padding: 15px
+        box-shadow: -2px 2px 5px -2px rgba(#000, .5)
+        z-index: 999
+        .trigger
+            display: block
+            clear: both
+        .page-link
+            animation: getin .1s ease-in-out forwards
+            @for $i from 1 through 10
+                &:nth-of-type(#{$i})
+                    animation-duration: .3s * $i
+            
+    @keyframes getin
+        0%
+            opacity: 0
+            transform: translateY(10px)
+        100%
+            opacity: 1
+            transform: translateY(0)
 
 /**
  * Site footer
