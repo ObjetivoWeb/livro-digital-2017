@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 ---
 
 {% assign crumbs = page.url | split: '/' %}
@@ -16,28 +16,19 @@ layout: default
   {% endif %}
 {% endfor %}
 
-<article class="post">
-
-  <header class="post-header">
-
-    <h1 class="post-title">{% if page.titulo %}{{ page.titulo }}{% else if page.title %}{{ page.title }}{% endif %}</h1>
-    <div data-grid="">
-      <aside class="post-meta" data-cell>
-        <p><strong>{{ page.autor }}</strong> <br>{{ unidade }} - {{ turma }}</p>
-      </aside>
-      <div class="share-container" data-cell="shrink">
-        <p class="share-label">Compartilhe este texto:</p>
-        {% include share/widget.html position = 'header' %}
-      </div>
-    </div>
-    <div class="data-img" data-flickr-id="{{ flickr }}" data-pic-title="{{ crumbs[3] }}" title="Ilustração para {{ page.title }}, de {{ page.nome }}"></div>
-
+<aside class="wrapper" data-grid="">
+  <header class="post-meta" data-cell>
+    <p><strong>{{ page.autor }}</strong> <br>{{ unidade }} - {{ turma }}</p>
   </header>
-
-  <div class="post-content">
-    {{ content }}
+  <div class="share-container" data-cell="shrink">
+    <p class="share-label">Compartilhe este texto:</p>
+    {% include share/widget.html position = 'header' %}
   </div>
+</aside>
 
+{{ content }}
+
+<footer class="page-content wrapper">
   <nav class="post-navigation" data-grid="row spacing justify">
     <div data-cell="1of2" class="prev">
     {% if page.previous.url %}
@@ -50,25 +41,24 @@ layout: default
     {% endif %}
     </div>
   </nav>
+</footer>
 
-  <div class="share-container" data-grid>
-    <p class="share-label" data-cell="1of2">Gostou? Comente e compartilhe:</p>
-    {% include share/widget.html position = 'header' %}
-  </div>
+<aside class="share-container page-content wrapper" data-grid>
+  <p class="share-label" data-cell="1of2">Gostou? Comente e compartilhe:</p>
+  {% include share/widget.html position = 'header' %}
+</aside>
 
-  <div id="disqus_thread"></div>
-  <script>
-  var disqus_config = function () {
-    this.page.url = '{{ page.url | prepend: site.baseurl | prepend: site.url }}';
-    this.page.identifier = '{% if page.titulo %}{{ page.titulo }}{% else if page.title %}{{ page.title }}{% endif %}';
-  };
-  (function() { /* DON'T EDIT BELOW THIS LINE */
-  var d = document, s = d.createElement('script');
-  s.src = '//objetivoweb.disqus.com/embed.js';
-  s.setAttribute('data-timestamp', +new Date());
-  (d.head || d.body).appendChild(s);
-  })();
-  </script>
-  <noscript>Por favor, habilite a execução de javascript para visualizar <a href="https://disqus.com/?ref_noscript">comentários do Disqus</a>.</noscript>
-
-</article>
+<div id="disqus_thread" class="wrapper"></div>
+<script>
+var disqus_config = function () {
+  this.page.url = '{{ page.url | prepend: site.baseurl | prepend: site.url }}';
+  this.page.identifier = '{% if page.titulo %}{{ page.titulo }}{% else if page.title %}{{ page.title }}{% endif %}';
+};
+(function() { /* DON'T EDIT BELOW THIS LINE */
+var d = document, s = d.createElement('script');
+s.src = '//objetivoweb.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Por favor, habilite a execução de javascript para visualizar <a href="https://disqus.com/?ref_noscript">comentários do Disqus</a>.</noscript>

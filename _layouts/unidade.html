@@ -1,14 +1,8 @@
 ---
-layout: default
+layout: page
 ---
 
-<header class="post-header" data-grid="row nowrap">
-  <h1 class="post-title">{{ page.title }}</h1>
-</header>
-
-<div class="post-content">
-  {{ content }}
-</div>
+{{ content }}
 
 {% assign crumbs = page.url | split: '/' %}
 {% assign unidades = site.textos | group_by: 'unidade' %}
@@ -18,7 +12,7 @@ layout: default
   {% endif %}
 {% endfor %}
 
-<section class="post-section">
+<section class="wrapper post-section">
 {% for turma in turmas %}
 
   <div data-grid="spacing cols-2" data-turma="{{ turma.name }}">

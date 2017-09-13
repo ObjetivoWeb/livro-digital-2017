@@ -106,7 +106,8 @@
 /**
  * Page content
 .page-content
-    padding: $spacing-unit 0
+    padding-left: $spacing-unit
+    padding-right: $spacing-unit
     letter-spacing: 1px
 
     >
@@ -135,17 +136,6 @@
     font-size: $small-font-size
     color: $grey-color
 
-.post-autor
-    // 
-
-.post-turma
-    // 
-
-.post-excerpt
-    // 
-
-/**
- * Posts
 .post-header
     margin-bottom: $spacing-unit
 
@@ -158,18 +148,12 @@
 
 .post-content
     margin-bottom: $spacing-unit
-    h2
-        font-size: 32px
-        +media-query($on-laptop)
-            font-size: 28px
-    h3
-        font-size: 26px
-        +media-query($on-laptop)
-            font-size: 22px
-    h4
-        font-size: 20px
-        +media-query($on-laptop)
-            font-size: 18px
+    >
+        h1, h2, h3, h4, h5, h6,
+        p, blockquote, pre,
+        ul, ol, dl, figure,
+        table
+            @extend .wrapper
 
 .post-navigation
     margin: $spacing-unit * 2 0
