@@ -28,21 +28,3 @@
   </div>
 
 </header>
-
-<div class="site-hero">
-  <h2 class="site-tagline">{{ site.tagline }}</h2>
-</div>
-
-<nav class="menu-unidades">
-  {% assign crumbs = page.url | split: '/' %}
-
-  <div class="wrapper">
-
-  {% for link in site.unidades %}
-    {% assign unidade = link.id | remove: '/' %}
-    <a{% if crumbs[1] == unidade %} class="selected"{% endif %} href="{{ link.url | prepend: site.baseurl }}">{{ link.title }}</a>
-  {% endfor %}
-
-  </div>
-
-</nav>

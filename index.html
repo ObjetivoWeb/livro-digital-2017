@@ -2,51 +2,60 @@
 layout: default
 ---
 
-<section class="page-content">
-    <h2>Aos que virão...</h2>
-    <pre>
-Desarrumar as pedras do chão
-Pra marcar minha passagem
-
-Vida é suor e paixão
-Coração e coragem
-
-Juntar cada mito na mão
-E quebrar a sua imagem
-
-Recusar a ilusão
-De todo e qualquer miragem
-
-Virar a Terra pelo avesso
-Descobrir novos caminhos
-Inventar outro começo
-E repovoar os ninhos
-Ir por aí, plantando ideias
-Pra gerar um fruto novo
-Que deixe um gosto de riso
-Na boca e na alma do povo
-Fazer do amor a razão
-A missão e a mensagem
-
-Que interrompa a tensão
-Da regressiva contagem
-
-Depois repartir o pão
-Recompor a paisagem
-
-Deixando aos que virão
-Um mundo sereno
-E seguir viagem
-    </pre>
+<section class="post-content section-intro">
+    <h2 class="intro-title">Aos que virão...</h2>
+    <blockquote>
+        <p class="vv">
+            Desarrumar as pedras do chão<br>
+            Pra marcar minha passagem
+        </p>
+        <p class="vv">
+            Vida é suor e paixão<br>
+            Coração e coragem
+        </p>
+        <p class="vv">
+            Juntar cada mito na mão<br>
+            E quebrar a sua imagem
+        </p>
+        <p class="vv">
+            Recusar a ilusão<br>
+            De todo e qualquer miragem
+        </p>
+        <p class="vv">
+            Virar a Terra pelo avesso<br>
+            Descobrir novos caminhos<br>
+            Inventar outro começo<br>
+            E repovoar os ninhos<br>
+            Ir por aí, plantando ideias<br>
+            Pra gerar um fruto novo<br>
+            Que deixe um gosto de riso<br>
+            Na boca e na alma do povo<br>
+            Fazer do amor a razão<br>
+            A missão e a mensagem
+        </p>
+        <p class="vv">
+            Que interrompa a tensão<br>
+            Da regressiva contagem
+        </p>
+        <p class="vv">
+            Depois repartir o pão<br>
+            Recompor a paisagem
+        </p>
+        <p class="vv">
+            Deixando aos que virão<br>
+            Um mundo sereno<br>
+            E seguir viagem
+        </p>
+    </blockquote>
     <p><em>Hardy Guedes</em></p>
 </section>
 
-<section class="page-content">
-    <ul>
-        {% for texto in site.textos %}
-            <li>
-                <a href="{{ site.baseurl }}{{ texto.url }}">{{ texto.title }}</a>
-            </li>
-        {% endfor %}
-    </ul>
+<section class="post-content">
+
+    <blockquote>
+    {% for texto in site.textos %}
+        <a href="{{ site.baseurl }}{{ texto.url }}">{{ texto.title }}</a>
+    {% endfor %}
+    </blockquote>
+
 </section>

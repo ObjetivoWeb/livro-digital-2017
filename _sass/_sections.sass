@@ -1,0 +1,21 @@
+.section-
+    &intro
+        @extend .page-content
+        display: table
+        width: 100%
+        background: #FFF8EF url('../img/brian-mann.jpg') right no-repeat
+        background-image: linear-gradient(to right, #FFF8EF 50%, transparent), url('../img/brian-mann.jpg')
+        background-size: auto 100%
+        +media-greater($on-laptop)
+            .vv
+                display: table
+                &:nth-child(2n)
+                    margin-left: 15%
+                &:nth-child(3n)
+                    margin-left: 30%
+                &:nth-child(5n)
+                    margin-left: 45%
+        .intro-title
+            font-size: 100px
+            +media-query($content-width)
+                font-size: 7vw
