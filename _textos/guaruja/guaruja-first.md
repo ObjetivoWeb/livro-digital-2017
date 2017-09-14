@@ -1,5 +1,8 @@
 ---
 title: First do Guarujá
+autor: First Man
+turma: 9º S
+image: "/uploads/ws_Message_1680x1050.jpg"
 ---
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit.
