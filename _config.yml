@@ -2,6 +2,9 @@
 title: Livro Digital 2017
 timezone: UTC
 collections:
+  dados-ocultos:
+    title: Dados ocultos
+    output: true
   posts:
     title: Posts
     output: true
